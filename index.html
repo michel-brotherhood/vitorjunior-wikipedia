@@ -292,16 +292,17 @@
       overflow: hidden; display: grid;
     }
     .hero__video {
-      position: absolute; inset: 0; width: 100%; height: 100%;
+      position: absolute; left: 0; top: -10%; width: 100%; height: 120%;
       object-fit: cover; z-index: 0;
+      will-change: transform;
     }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(
         to right,
-        rgba(7, 20, 50, 0.82) 0%,
-        rgba(7, 20, 50, 0.60) 50%,
-        rgba(7, 20, 50, 0.25) 100%
+        rgba(7, 20, 50, 0.92) 0%,
+        rgba(7, 20, 50, 0.78) 40%,
+        rgba(7, 20, 50, 0.30) 100%
       );
     }
     .hero__inner {
@@ -337,6 +338,7 @@
       font-size: clamp(1rem, 1.6vw, 1.18rem);
       font-weight: 600; color: rgba(255,255,255,.9);
       line-height: 1.3;
+      text-shadow: 0 1px 10px rgba(0,0,0,.65);
     }
     .hero__actions {
       display: flex; align-items: center; gap: 1rem; margin-top: 2.4rem; flex-wrap: wrap;
@@ -1663,6 +1665,14 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    /* ── Hero parallax ── */
+    const heroImg = document.querySelector('.hero__video');
+    function updateParallax() {
+      if (!heroImg) return;
+      heroImg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true });
 
     /* ── Stagger children of grids ── */
     document.querySelectorAll('.projetos-grid, .prioridades-grid, .stats-band').forEach(grid => {
