@@ -297,7 +297,12 @@
     }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
-      background: rgba(7, 20, 50, 0.68);
+      background: linear-gradient(
+        to right,
+        rgba(7, 20, 50, 0.82) 0%,
+        rgba(7, 20, 50, 0.60) 50%,
+        rgba(7, 20, 50, 0.25) 100%
+      );
     }
     .hero__inner {
       position: relative; z-index: 2;
