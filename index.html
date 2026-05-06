@@ -303,9 +303,7 @@
     }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
-      background:
-        linear-gradient(to right, rgba(7,20,50,.97) 0%, rgba(7,20,50,.78) 48%, rgba(7,20,50,.18) 100%),
-        linear-gradient(to top,   rgba(7,20,50,.6)  0%, transparent 35%);
+      background: rgba(7, 20, 50, 0.45);
     }
     .hero__inner {
       position: relative; z-index: 2;
@@ -1066,8 +1064,7 @@
 
   <!-- ══════════════ HERO ══════════════ -->
   <section class="hero" id="inicio" aria-label="Apresentação">
-    <video class="hero__video" autoplay muted loop playsinline
-      poster="assets/vitor_junior_blur_ALTA (1).webp">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto">
       <source src="assets/alerj_video.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay" aria-hidden="true"></div>
