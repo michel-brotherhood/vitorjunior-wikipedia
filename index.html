@@ -229,22 +229,16 @@
 
     /* ─── NAVBAR ─────────────────────────────────────────── */
     .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
       height: 64px;
       display: flex; align-items: center;
       padding: 0 2rem;
       background: transparent;
-      transition: background .35s var(--ease), box-shadow .35s var(--ease), backdrop-filter .35s;
-    }
-    .navbar.scrolled {
-      background: var(--navy);
-      box-shadow: 0 2px 20px rgba(0,0,0,.35);
     }
     .navbar__inner {
       max-width: 1200px; margin: 0 auto; width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: flex-end;
     }
-    .navbar__logo { height: 38px; width: auto; flex-shrink: 0; }
     .navbar__nav {
       display: flex; gap: .25rem; list-style: none; align-items: center;
     }
@@ -327,7 +321,7 @@
       display: inline-flex; align-items: center; gap: .65rem;
       font-family: var(--font-ui); font-size: .7rem; font-weight: 600;
       letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(255,255,255,.52); margin-bottom: 1.1rem;
+      color: rgba(255,255,255,.92); margin-bottom: 1.1rem;
       animation: slideUp .8s .05s var(--ease) both;
     }
     .hero__eyebrow::before {
@@ -924,6 +918,8 @@
         margin: 0.6rem auto 1.2rem;
         opacity: 0.85;
       }
+      .hero__title { display: none; }
+      .hero__rule  { display: none; }
       .hero__eyebrow::before { display: none; }
       .hero__subtitle { max-width: 420px; }
       .hero__actions { justify-content: center; }
@@ -1048,7 +1044,6 @@
   <!-- ══════════════ NAVBAR ══════════════ -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
     <div class="navbar__inner">
-      <img src="assets/logo em branco.webp" alt="Vitor Junior" class="navbar__logo">
       <ul class="navbar__nav">
         <li><a href="#trajetoria">Trajetória</a></li>
         <li><a href="#mandatos">Mandatos</a></li>
@@ -1675,20 +1670,6 @@
   </footer>
 
   <script>
-    /* ── Navbar scroll ── */
-    const navbar = document.getElementById('navbar');
-    const hero   = document.querySelector('.hero');
-
-    function updateNavbar() {
-      if (window.scrollY > (hero ? hero.offsetHeight * 0.6 : 80)) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-    updateNavbar();
-
     /* ── Active nav link ── */
     const sections = document.querySelectorAll('section[id], div[id], main[id]');
     const navLinks = document.querySelectorAll('.navbar__nav a');
