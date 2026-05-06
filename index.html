@@ -953,8 +953,17 @@
       .hero__text { padding: 1rem 1.2rem 3rem; }
 
       /* Wiki chrome */
+      .wiki-chrome__inner {
+        flex-direction: column;
+        align-items: center;
+        gap: .35rem;
+        padding: .5rem 1rem;
+      }
+      .wiki-chrome__left { justify-content: center; }
       .wiki-chrome__tagline { display: none; }
       .wiki-chrome__tabs {
+        width: 100%;
+        justify-content: center;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; flex-wrap: nowrap;
