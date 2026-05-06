@@ -395,6 +395,7 @@
       color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s;
     }
     .hero__cta-ghost:hover { color: #fff; text-decoration: none; }
+    .hero__mobile-logo { display: none; }
 
     /* ── Portrait side ── */
     .hero__portrait-col {
@@ -893,28 +894,35 @@
         min-height: 100svh;
         row-gap: 0;
       }
-      /* Foto vem PRIMEIRO (acima do texto) */
+      /* Hero mobile: foto acima do texto, sem flutuar */
+      .hero__inner {
+        grid-template-rows: auto 1fr;
+        align-items: start;
+      }
       .hero__portrait-col {
-        display: flex;
         order: -1;
-        height: auto;
+        display: flex;
         align-items: flex-end;
         justify-content: center;
-        padding-top: 72px; /* navbar */
-        margin-bottom: -1.5rem;
+        height: auto;
+        padding-top: 68px; /* limpa navbar */
+        padding-bottom: 0;
+        margin-bottom: 0;
       }
-      .hero__portrait { max-width: 200px; }
+      .hero__portrait { max-width: 240px; }
       .hero__portrait-ring { display: none; }
-      .hero__card {
-        left: auto; right: -0.25rem;
-        bottom: 18%; padding: .65rem .9rem;
-      }
-      .hero__card-num { font-size: 1.2rem; }
+      .hero__card { display: none; }
       /* Texto centralizado */
       .hero__text {
-        padding: 0 0 4rem;
+        padding: 0.75rem 0 4rem;
         text-align: center;
         align-items: center;
+      }
+      .hero__mobile-logo {
+        display: block;
+        width: 130px;
+        margin: 0.6rem auto 1.2rem;
+        opacity: 0.85;
       }
       .hero__eyebrow::before { display: none; }
       .hero__subtitle { max-width: 420px; }
@@ -963,8 +971,9 @@
 
       /* Hero */
       .hero__inner { padding: 0 1.5rem; }
-      .hero__portrait { max-width: 160px; }
-      .hero__portrait-col { padding-top: 64px; }
+      .hero__portrait { max-width: 200px; }
+      .hero__portrait-col { padding-top: 60px; }
+      .hero__mobile-logo { width: 110px; }
       .hero__title {
         font-size: clamp(2.8rem, 11vw, 3.8rem);
         letter-spacing: -2px;
@@ -982,7 +991,7 @@
         justify-content: center;
       }
       .hero__cta-ghost { justify-content: center; }
-      .hero__text { padding: 0 0 3.5rem; }
+      .hero__text { padding: 0.5rem 0 3.5rem; }
 
       /* Wiki chrome */
       .wiki-chrome__tagline { display: none; }
@@ -1016,9 +1025,9 @@
 
     /* ── Mobile pequeno ── */
     @media (max-width: 400px) {
-      .hero__portrait { max-width: 140px; }
+      .hero__portrait { max-width: 170px; }
+      .hero__mobile-logo { width: 95px; }
       .hero__title { font-size: clamp(2.5rem, 13vw, 3.2rem); letter-spacing: -1.5px; }
-      .hero__card { display: none; } /* muito pequeno, esconde o card */
 
       .stats-band { padding: 1.25rem .75rem; }
       .stat-item { padding: .65rem .5rem; }
@@ -1074,6 +1083,7 @@
       <!-- Coluna de texto -->
       <div class="hero__text">
         <p class="hero__eyebrow">Deputado Estadual &middot; PDT &middot; Rio de Janeiro</p>
+        <img src="assets/logo em branco.webp" alt="Vitor Junior" class="hero__mobile-logo">
         <h1 class="hero__title">
           Vitor<span class="t-light">Junior</span>
         </h1>
