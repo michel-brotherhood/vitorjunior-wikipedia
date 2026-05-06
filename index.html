@@ -317,56 +317,24 @@
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero__eyebrow {
-      display: inline-flex; align-items: center; gap: .65rem;
-      font-family: var(--font-ui); font-size: .7rem; font-weight: 600;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(255,255,255,.92); margin-bottom: 1.1rem;
+    .hero__logo {
+      width: 210px; margin: 0 0 1.9rem;
       animation: slideUp .8s .05s var(--ease) both;
     }
-    .hero__eyebrow::before {
-      content: ''; width: 28px; height: 2px;
-      background: rgba(255,255,255,.38); border-radius: 1px; flex-shrink: 0;
-    }
-    .hero__title {
-      font-family: var(--font-ui);
-      font-size: clamp(3.4rem, 7.5vw, 5.6rem);
-      font-weight: 800; letter-spacing: -3px; line-height: .88;
-      color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,.2);
+    .hero__taglines {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: .85rem;
       animation: slideUp .8s .12s var(--ease) both;
     }
-    .hero__title .t-light {
-      display: block; font-weight: 300; letter-spacing: -1.5px;
-      color: rgba(255,255,255,.68);
-    }
-    .hero__rule {
-      width: 44px; height: 3px;
-      background: rgba(255,255,255,.32); border-radius: 2px;
-      margin: 1.75rem 0 1.25rem;
-      animation: slideUp .8s .18s var(--ease) both;
-    }
-    .hero__subtitle {
+    .hero__taglines li {
       font-family: var(--font-ui);
-      font-size: clamp(.9rem, 1.8vw, 1.08rem);
-      font-weight: 400; line-height: 1.7; color: rgba(255,255,255,.65);
-      max-width: 440px;
-      animation: slideUp .8s .23s var(--ease) both;
-    }
-    .hero__badges {
-      display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.6rem;
-      animation: slideUp .8s .29s var(--ease) both;
-    }
-    .hero__badge {
-      font-family: var(--font-ui); font-size: .68rem; font-weight: 500;
-      letter-spacing: .04em; padding: .28rem .75rem; border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.07);
-      backdrop-filter: blur(12px);
-      color: rgba(255,255,255,.78);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      font-weight: 600; color: rgba(255,255,255,.9);
+      line-height: 1.3;
     }
     .hero__actions {
-      display: flex; align-items: center; gap: 1rem; margin-top: 2.2rem; flex-wrap: wrap;
-      animation: slideUp .8s .35s var(--ease) both;
+      display: flex; align-items: center; gap: 1rem; margin-top: 2.4rem; flex-wrap: wrap;
+      animation: slideUp .8s .2s var(--ease) both;
     }
     .hero__cta {
       display: inline-flex; align-items: center; gap: .5rem;
@@ -389,9 +357,6 @@
       color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s;
     }
     .hero__cta-ghost:hover { color: #fff; text-decoration: none; }
-    .hero__mobile-logo { display: block; width: 210px; margin: 0 0 1.8rem; }
-    .hero__title { display: none; }
-    .hero__rule  { display: none; }
 
     /* ── Portrait side ── */
     .hero__portrait-col {
@@ -914,9 +879,9 @@
         text-align: center;
         align-items: center;
       }
-      .hero__mobile-logo { width: 130px; margin: 0.6rem auto 1.2rem; }
-      .hero__eyebrow::before { display: none; }
-      .hero__subtitle { max-width: 420px; }
+      .hero__logo { width: 120px; margin: 0.4rem auto 1.2rem; }
+      .hero__taglines { align-items: center; }
+      .hero__taglines li { font-size: clamp(.85rem, 3.8vw, 1rem); text-align: center; }
       .hero__actions { justify-content: center; }
       .hero__scroll { display: none; }
 
@@ -964,24 +929,10 @@
       .hero__inner { padding: 0 1.5rem; }
       .hero__portrait { max-width: 200px; }
       .hero__portrait-col { padding-top: 60px; }
-      .hero__mobile-logo { width: 110px; }
-      .hero__title {
-        font-size: clamp(2.8rem, 11vw, 3.8rem);
-        letter-spacing: -2px;
-      }
-      .hero__subtitle { font-size: .92rem; }
-      .hero__badges { justify-content: center; }
-      .hero__actions {
-        flex-direction: column;
-        align-items: center;
-        gap: .75rem;
-        width: 100%;
-      }
-      .hero__cta {
-        width: 100%; max-width: 300px;
-        justify-content: center;
-      }
-      .hero__cta-ghost { justify-content: center; }
+      .hero__logo { width: 100px; }
+      .hero__taglines li { font-size: clamp(.8rem, 3.4vw, .93rem); }
+      .hero__actions { align-items: center; width: 100%; }
+      .hero__cta { width: 100%; max-width: 300px; justify-content: center; }
       .hero__text { padding: 0.5rem 0 3.5rem; }
 
       /* Wiki chrome */
@@ -1017,8 +968,8 @@
     /* ── Mobile pequeno ── */
     @media (max-width: 400px) {
       .hero__portrait { max-width: 170px; }
-      .hero__mobile-logo { width: 95px; }
-      .hero__title { font-size: clamp(2.5rem, 13vw, 3.2rem); letter-spacing: -1.5px; }
+      .hero__logo { width: 88px; }
+      .hero__taglines li { font-size: clamp(.75rem, 3.2vw, .88rem); }
 
       .stats-band { padding: 1.25rem .75rem; }
       .stat-item { padding: .65rem .5rem; }
@@ -1072,33 +1023,18 @@
 
       <!-- Coluna de texto -->
       <div class="hero__text">
-        <p class="hero__eyebrow">Deputado Estadual &middot; Rio de Janeiro</p>
-        <img src="assets/logo em branco.webp" alt="Vitor Junior" class="hero__mobile-logo">
-        <h1 class="hero__title">
-          Vitor<span class="t-light">Junior</span>
-        </h1>
-        <div class="hero__rule" aria-hidden="true"></div>
-        <p class="hero__subtitle">
-          Educação, saúde, infraestrutura e segurança para todos os municípios do Rio de Janeiro.
-        </p>
-        <div class="hero__badges">
-          <span class="hero__badge">ALERJ</span>
-          <span class="hero__badge">13ª Legislatura</span>
-          <span class="hero__badge">2023 – Presente</span>
-        </div>
+        <img src="assets/logo em branco.webp" alt="Vitor Junior" class="hero__logo">
+        <ul class="hero__taglines">
+          <li>💼 Deputado Estadual RJ</li>
+          <li>🤝 Atuação real na ALERJ</li>
+          <li>⚙️ Presente nas cidades, perto das pessoas&nbsp;🤜🏼🤛🏼</li>
+        </ul>
         <div class="hero__actions">
           <a href="#conteudo" class="hero__cta">
-            Conheça sua trajetória
+            Conheça minha trajetória
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#projetos" class="hero__cta-ghost">
-            Projetos de lei
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 9l6 6 6-6"/>
             </svg>
           </a>
         </div>
