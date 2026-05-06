@@ -301,16 +301,16 @@
     }
     .hero__inner {
       position: relative; z-index: 2;
-      width: 100%; max-width: 1200px; margin: 0 auto;
+      width: 100%; max-width: 1280px; margin: 0 auto;
       padding: 0 2.5rem;
-      display: grid; grid-template-columns: 1fr 400px;
-      align-items: flex-end;
+      display: grid; grid-template-columns: 1fr 540px;
+      align-items: center;
       min-height: 100vh;
     }
 
     /* ── Text side ── */
     .hero__text {
-      padding: 9rem 0 6rem; color: #fff;
+      padding: 2rem 0; color: #fff;
       display: flex; flex-direction: column; align-items: flex-start;
     }
     @keyframes slideUp {
@@ -362,14 +362,14 @@
     .hero__portrait-col {
       position: relative; display: flex;
       align-items: flex-end; justify-content: center;
-      height: 100%;
+      align-self: stretch;
     }
     @keyframes portraitIn {
       from { opacity: 0; transform: translateY(50px) scale(.96); }
       to   { opacity: 1; transform: translateY(0)   scale(1); }
     }
     .hero__portrait {
-      position: relative; width: 100%; max-width: 380px;
+      position: relative; width: 100%; max-width: 520px;
       animation: portraitIn 1.1s .2s var(--ease) both;
     }
     .hero__portrait-ring {
