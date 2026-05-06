@@ -389,7 +389,9 @@
       color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s;
     }
     .hero__cta-ghost:hover { color: #fff; text-decoration: none; }
-    .hero__mobile-logo { display: none; }
+    .hero__mobile-logo { display: block; width: 210px; margin: 0 0 1.8rem; }
+    .hero__title { display: none; }
+    .hero__rule  { display: none; }
 
     /* ── Portrait side ── */
     .hero__portrait-col {
@@ -912,14 +914,7 @@
         text-align: center;
         align-items: center;
       }
-      .hero__mobile-logo {
-        display: block;
-        width: 130px;
-        margin: 0.6rem auto 1.2rem;
-        opacity: 0.85;
-      }
-      .hero__title { display: none; }
-      .hero__rule  { display: none; }
+      .hero__mobile-logo { width: 130px; margin: 0.6rem auto 1.2rem; }
       .hero__eyebrow::before { display: none; }
       .hero__subtitle { max-width: 420px; }
       .hero__actions { justify-content: center; }
@@ -1077,7 +1072,7 @@
 
       <!-- Coluna de texto -->
       <div class="hero__text">
-        <p class="hero__eyebrow">Deputado Estadual &middot; PDT &middot; Rio de Janeiro</p>
+        <p class="hero__eyebrow">Deputado Estadual &middot; Rio de Janeiro</p>
         <img src="assets/logo em branco.webp" alt="Vitor Junior" class="hero__mobile-logo">
         <h1 class="hero__title">
           Vitor<span class="t-light">Junior</span>
@@ -1089,7 +1084,6 @@
         <div class="hero__badges">
           <span class="hero__badge">ALERJ</span>
           <span class="hero__badge">13ª Legislatura</span>
-          <span class="hero__badge">PDT</span>
           <span class="hero__badge">2023 – Presente</span>
         </div>
         <div class="hero__actions">
@@ -1116,7 +1110,7 @@
           <div class="hero__portrait-ring"></div>
           <img
             src="assets/foto sem fundo.webp"
-            alt="Vitor Junior — Deputado Estadual PDT RJ"
+            alt="Vitor Junior — Deputado Estadual Rio de Janeiro"
           >
           <div class="hero__card">
             <div class="hero__card-num">43.958</div>
@@ -1190,7 +1184,7 @@
     <!-- Título da página -->
     <div class="wiki-header">
       <h1>Vitor Junior</h1>
-      <p class="wiki-header__desc">Político brasileiro, deputado estadual pelo PDT no Rio de Janeiro (2023–presente)</p>
+      <p class="wiki-header__desc">Político brasileiro, deputado estadual no Rio de Janeiro (2023–presente)</p>
     </div>
 
     <!-- Corpo: conteúdo + infobox -->
@@ -1568,13 +1562,13 @@
           <div class="infobox__photo-wrap">
             <img
               src="assets/foto sem fundo.webp"
-              alt="Foto oficial de Vitor Junior, deputado estadual PDT-RJ"
+              alt="Foto oficial de Vitor Junior, deputado estadual RJ"
               class="infobox__photo"
               loading="lazy"
               width="300"
             >
           </div>
-          <div class="infobox__caption">Deputado Estadual · PDT · Rio de Janeiro</div>
+          <div class="infobox__caption">Deputado Estadual · Rio de Janeiro</div>
           <table class="infobox__table">
             <tr><td>Cargo</td><td>Deputado Estadual – ALERJ</td></tr>
             <tr><td>Partido</td><td>PDT</td></tr>
@@ -1607,7 +1601,7 @@
         "Meu mandato é pautado pela transparência, pelo diálogo aberto e pela busca
         constante de soluções concretas para os desafios de cada município do Rio de Janeiro."
       </p>
-      <p class="quote-band__author">— Vitor Junior · Deputado Estadual PDT-RJ</p>
+      <p class="quote-band__author">— Vitor Junior · Deputado Estadual</p>
     </div>
   </div>
 
@@ -1618,7 +1612,7 @@
       <div>
         <img src="assets/logo em branco.webp" alt="Vitor Junior" class="footer__logo">
         <p class="footer__about">
-          Deputado Estadual pelo PDT do Rio de Janeiro, comprometido com educação,
+          Deputado Estadual pelo Rio de Janeiro, comprometido com educação,
           saúde, infraestrutura e segurança pública para todos os fluminenses.<br>
           <a href="https://deputadovitorjunior.com.br" style="color:rgba(255,255,255,.5);font-size:.78rem;margin-top:.4rem;display:inline-block">
             deputadovitorjunior.com.br
