@@ -868,46 +868,169 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .wiki-body { grid-template-columns: 1fr 280px; gap: 2rem; }
+
+    /* ── Desktop médio ── */
+    @media (max-width: 1100px) {
+      .hero__inner { grid-template-columns: 1fr 360px; }
     }
 
+    @media (max-width: 1024px) {
+      .hero__inner { grid-template-columns: 1fr 300px; }
+      .wiki-body { grid-template-columns: 1fr 268px; gap: 1.75rem; }
+    }
+
+    /* ── Tablet ── */
     @media (max-width: 900px) {
-      .hero__inner { grid-template-columns: 1fr; align-content: center; }
-      .hero__portrait-col { display: none; }
-      .hero__text { padding: 9rem 0 4.5rem; }
+      /* Hero: empilha foto acima do texto */
+      .hero {
+        min-height: 100svh; /* respeita barra do browser mobile */
+        align-items: start;
+      }
+      .hero__inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        justify-items: center;
+        padding: 0 2rem;
+        min-height: 100svh;
+        row-gap: 0;
+      }
+      /* Foto vem PRIMEIRO (acima do texto) */
+      .hero__portrait-col {
+        display: flex;
+        order: -1;
+        height: auto;
+        align-items: flex-end;
+        justify-content: center;
+        padding-top: 72px; /* navbar */
+        margin-bottom: -1.5rem;
+      }
+      .hero__portrait { max-width: 200px; }
+      .hero__portrait-ring { display: none; }
+      .hero__card {
+        left: auto; right: -0.25rem;
+        bottom: 18%; padding: .65rem .9rem;
+      }
+      .hero__card-num { font-size: 1.2rem; }
+      /* Texto centralizado */
+      .hero__text {
+        padding: 0 0 4rem;
+        text-align: center;
+        align-items: center;
+      }
+      .hero__eyebrow::before { display: none; }
+      .hero__subtitle { max-width: 420px; }
+      .hero__actions { justify-content: center; }
+      .hero__scroll { display: none; }
+
+      /* Artigo */
       .wiki-body { grid-template-columns: 1fr; }
-      .infobox { position: static; max-width: 480px; margin: 0 auto 2rem; }
+      .infobox {
+        position: static;
+        max-width: 100%;
+        margin: 0 0 2rem;
+        /* Horizontal no tablet: foto + tabela lado a lado */
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        grid-template-rows: auto auto 1fr auto;
+      }
+      .infobox__header { grid-column: 1 / -1; }
+      .infobox__photo-wrap {
+        grid-row: 2 / 5;
+        border-right: 1px solid #a2a9b1;
+        border-bottom: none;
+        display: flex; align-items: center; justify-content: center;
+        padding: .75rem;
+      }
+      .infobox__photo { max-height: 220px; }
+      .infobox__caption { grid-column: 2; border-left: none; }
+      .infobox__table { grid-column: 2; }
+      .infobox__social { grid-column: 2; }
+
+      /* Stats */
       .stats-band { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
+
+      /* Footer */
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .footer__grid > :first-child { grid-column: 1 / -1; }
     }
 
-    @media (max-width: 768px) {
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      /* Navbar */
       .navbar__nav { display: none; }
       .hamburger { display: flex; }
       .mobile-nav { display: flex; }
-      .hero__inner { padding: 0 1.75rem; }
-      .hero__text { padding: 8rem 0 4rem; }
-      .wiki-wrap { padding: 1.75rem 1rem 3.5rem; }
+
+      /* Hero */
+      .hero__inner { padding: 0 1.5rem; }
+      .hero__portrait { max-width: 160px; }
+      .hero__portrait-col { padding-top: 64px; }
+      .hero__title {
+        font-size: clamp(2.8rem, 11vw, 3.8rem);
+        letter-spacing: -2px;
+      }
+      .hero__subtitle { font-size: .92rem; }
+      .hero__badges { justify-content: center; }
+      .hero__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: .75rem;
+        width: 100%;
+      }
+      .hero__cta {
+        width: 100%; max-width: 300px;
+        justify-content: center;
+      }
+      .hero__cta-ghost { justify-content: center; }
+      .hero__text { padding: 0 0 3.5rem; }
+
+      /* Wiki chrome */
+      .wiki-chrome__tagline { display: none; }
+      .wiki-chrome__tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; flex-wrap: nowrap;
+      }
+      .wiki-chrome__tabs::-webkit-scrollbar { display: none; }
+
+      /* Infobox: volta a ser vertical em mobile */
+      .infobox {
+        display: block;
+        max-width: 400px;
+        margin: 0 auto 2rem;
+      }
+      .infobox__photo-wrap {
+        border-right: none;
+        border-bottom: 1px solid #a2a9b1;
+      }
+      .infobox__photo { max-height: none; }
+
+      /* Artigo */
+      .wiki-wrap { padding: 1.5rem 1rem 3.5rem; }
+      .toc { max-width: 100%; width: 100%; }
       .projetos-grid { grid-template-columns: 1fr; }
       .prioridades-grid { grid-template-columns: repeat(2, 1fr); }
-      .quote-band { padding: 3rem 1.5rem; }
+      .quote-band { padding: 2.5rem 1.25rem; }
+      .wiki-section h2 { font-size: 1.3rem; }
     }
 
-    @media (max-width: 480px) {
-      .hero__inner { padding: 0 1.25rem; }
-      .hero__text { padding: 7.5rem 0 3.5rem; }
-      .hero__title { letter-spacing: -2px; }
-      .stats-band { grid-template-columns: repeat(2, 1fr); padding: 1.75rem 1rem; }
-      .stat-item { padding: .75rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
-      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.1); }
-      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+    /* ── Mobile pequeno ── */
+    @media (max-width: 400px) {
+      .hero__portrait { max-width: 140px; }
+      .hero__title { font-size: clamp(2.5rem, 13vw, 3.2rem); letter-spacing: -1.5px; }
+      .hero__card { display: none; } /* muito pequeno, esconde o card */
+
+      .stats-band { padding: 1.25rem .75rem; }
+      .stat-item { padding: .65rem .5rem; }
+      .stat-num { font-size: 1.6rem; }
+
       .prioridades-grid { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; gap: 1.75rem; }
-      .footer__bottom { flex-direction: column; text-align: center; }
-      .toc { max-width: 100%; width: 100%; }
+      .highlight-block { font-size: .78rem; padding: .75rem .85rem; }
+      .wiki-header h1 { font-size: 1.5rem; }
+      .footer__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer__bottom { flex-direction: column; text-align: center; gap: .4rem; }
     }
   </style>
 </head>
