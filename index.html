@@ -317,6 +317,7 @@
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    .mobile-br { display: none; }
     .hero__logo {
       width: 210px; margin: 0 0 1.9rem;
       animation: slideUp .8s .05s var(--ease) both;
@@ -882,6 +883,7 @@
         margin-top: -1.5rem;
         position: relative; z-index: 2;
       }
+      .mobile-br { display: block; }
       .hero__logo { width: 155px; margin: 0 auto 1.3rem; }
       .hero__taglines { align-items: center; }
       .hero__taglines li { font-size: clamp(.85rem, 3.8vw, 1rem); text-align: center; }
@@ -931,7 +933,7 @@
       /* Hero */
       .hero__inner { padding: 0 1.5rem; }
       .hero__portrait { max-width: 200px; }
-      .hero__portrait-col { padding-top: 60px; }
+      .hero__portrait-col { padding-top: 36px; }
       .hero__logo { width: 135px; }
       .hero__taglines li { font-size: clamp(.8rem, 3.4vw, .93rem); }
       .hero__actions { align-items: center; width: 100%; }
@@ -1030,7 +1032,7 @@
         <ul class="hero__taglines">
           <li>💼 Deputado Estadual RJ</li>
           <li>🤝 Atuação real na ALERJ</li>
-          <li>⚙️ Presente nas cidades,<wbr> perto das pessoas&nbsp;🤜🏼🤛🏼</li>
+          <li>⚙️ Presente nas cidades,<br class="mobile-br"> perto das pessoas&nbsp;🤜🏼🤛🏼</li>
         </ul>
         <div class="hero__actions">
           <a href="#conteudo" class="hero__cta">
